@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36e73f3e-da2f-4ea9-b827-263869f2c85f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/page.js" afterPath="$PROJECT_DIR$/assets/js/page.js" />
     </list>
     <ignored path="xplose.iws" />
@@ -47,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/assets/js/page.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -275,12 +276,12 @@
       <workItem from="1477364339446" duration="9714000" />
       <workItem from="1477448467199" duration="221000" />
       <workItem from="1477472780269" duration="527000" />
-      <workItem from="1477474478200" duration="9689000" />
+      <workItem from="1477474478200" duration="9851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21766000" />
+    <option name="totallyTimeSpent" value="21928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -450,7 +451,7 @@
     <entry file="file://$PROJECT_DIR$/assets/js/page.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
           <folding />
         </state>
       </provider>
