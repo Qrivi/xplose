@@ -1,0 +1,270 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css?family=Catamaran:100,300,400,800|Varela+Round";
+@import "reset.css";
+@import "animations.css";
+
+// colors
+$color-back : #212121;
+$color-accent : #76ad1c;
+$color-title : #3e3d40;
+$color-text : #ffffff;
+$font-title : "Varela Round", Helvetica, Arial, sans-serif;
+$font-normal : "Catamaran", Helvetica, Arial, sans-serif;
+
+html{
+  box-sizing : border-box;
+}
+*, *:before, *:after{
+  box-sizing                  : inherit;
+  -webkit-touch-callout       : none !important;
+  -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+  -ms-overflow-style          : none;
+}
+::-webkit-scrollbar{
+  width : 0 !important;
+}
+a{
+  color           : inherit;
+  cursor          : pointer;
+  text-decoration : none;
+}
+.h{
+  display : none !important;
+}
+.btn{
+  display        : inline-block;
+  background     : $color-accent;
+  border         : solid 3px $color-accent;
+  color          : $color-text;
+  text-transform : uppercase;
+  font-weight    : 800;
+  font-size      : 12px;
+  padding        : 10px 25px;
+  border-radius  : 22px;
+  transition     : background 500ms, color 500ms;
+
+  &.small{
+    margin    : 5px auto;
+    padding   : 3px 15px;
+    font-size : 11px;
+  }
+
+  &:hover{
+    background : transparent;
+    color      : $color-accent;
+  }
+}
+// --------------------------------------- //
+// --------------------------------------- //
+body{
+  overflow-x : hidden;
+  position   : relative;
+  z-index    : 1;
+  background : $color-accent;
+  min-height : 100vh;
+  width      : 100vw;
+  font       : 400 1.1em/1em $font-normal;
+  color      : $color-text;
+
+  > header{
+    position      : relative;
+    background    : transparent url(../img/bg.jpg) no-repeat center center;
+    border-bottom : solid 4px $color-accent;
+    height        : 680px;
+    animation     : header 100s infinite;
+
+    > section{
+      position   : relative;
+      z-index    : 10;
+      background : rgba(66, 66, 66, .6);
+      display    : block;
+      width      : 100%;
+      height     : 100%;
+      padding    : 150px 20px 0;
+
+      img{
+        display   : block;
+        width     : 350px;
+        margin    : 0 auto;
+        animation : fadeInSimple 3s 500ms forwards;
+        opacity   : 0;
+      }
+
+      p{
+        width      : 100%;
+        text-align : center;
+        animation  : fadeIn 1250ms 750ms forwards;
+        opacity    : 0;
+
+        &.baseline{
+          font-size   : 1.3em;
+          line-height : 1.5em;
+          padding     : 70px 20px 50px;
+        }
+
+        &:last-of-type:after{
+          content         : " ";
+          speak           : none;
+          display         : block;
+          width           : 100%;
+          height          : 12px;
+          margin          : 15px 0 0;
+          background      : transparent url(../img/arrow.svg) no-repeat center center;
+          background-size : auto 100%;
+        }
+      }
+    }
+  }
+
+  > footer{
+    position   : relative;
+    width      : 100vw;
+    height     : 600px;
+    border-top : solid 4px $color-accent;
+
+    #map{
+      display : block;
+      width   : 100%;
+      height  : 100%;
+
+      .marker{
+        display    : block;
+        width      : 10px;
+        height     : 10px;
+        background : $color-accent;
+      }
+    }
+  }
+
+  > main{
+    position   : relative;
+    background : $color-back;
+    min-height : 100vh;
+
+    h2{
+      display     : block;
+      text-align  : center;
+      padding     : 50px 20px;
+      font-size   : 1.3em;
+      line-height : 1.3em;
+    }
+
+    section{
+      width   : 100vw;
+      padding : 30px 0;
+
+      //&:after{
+      //  content    : " ";
+      //  speak      : none;
+      //  display    : block;
+      //  margin     : 90px auto 0;
+      //  max-width  : 696px;
+      //  width      : 69vw;
+      //  height     : 1px;
+      //  background : $color-accent;
+      //}
+
+      div{
+        display         : flex;
+        align-items     : flex-start;
+        justify-content : space-around;
+        flex-wrap       : wrap;
+        padding         : 20px;
+        margin          : 0 auto;
+        max-width       : 1200px;
+
+        &.images{
+          justify-content : space-between;
+          padding         : 0;
+          margin          : 10px 0 0;
+          max-width       : 100vw;
+          height          : 15vw;
+          overflow        : hidden;
+          speak           : none;
+          border-bottom   : solid 2px $color-accent;
+        }
+
+        img{
+          width      : calc(100vw / 3);
+          height     : 100%;
+          object-fit : cover;
+          opacity    : .3;
+          transition : opacity 2s;
+
+          &:hover{
+            opacity : .5;
+          }
+        }
+
+        > p{
+          width       : 45%;
+          max-width   : 500px;
+          font-size   : .9em;
+          line-height : 1.5em;
+        }
+
+        article{
+          width       : 280px;
+          padding     : 0 10px 40px;
+          font-size   : .9em;
+          line-height : 1.5em;
+
+          h3{
+            display        : block;
+            color          : $color-accent;
+            text-align     : center;
+            text-transform : lowercase;
+            font-family    : $font-title;
+            font-size      : 1.5em;
+            padding        : 10px 0;
+
+            &:after{
+              content    : " ";
+              speak      : none;
+              display    : block;
+              margin     : 15px auto;
+              width      : 50px;
+              height     : 1px;
+              background : $color-text;
+            }
+          }
+
+          .moreinfo{
+            display    : block;
+            padding    : 10px 0 0;
+            text-align : right;
+          }
+        }
+      }
+
+    }
+  }
+}
+// --------------------------------------- //
+.pace{
+  pointer-events : none;
+  user-select    : none;
+}
+.pace .pace-progress{
+  border-top : solid 5px $color-accent;
+  position   : fixed;
+  z-index    : 2000;
+  top        : 0;
+  right      : 0;
+  height     : 100vh;
+  width      : 100vw;
+  background : $color-back;
+  transform  : translate3d(0, 0, 0) !important;
+}
+.pace .pace-progress:after{
+  display     : block;
+  position    : absolute;
+  top         : 0;
+  right       : .5rem;
+  content     : attr(data-progress-text);
+  font-family : $font-title;
+  font-size   : 4rem;
+  line-height : 1;
+  text-align  : right;
+  color       : $color-back;
+}
