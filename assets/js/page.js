@@ -12,7 +12,12 @@ $( document ).ready( function(){
         } );
     } );
 
-    $('body > header p, .h').appear();
+    $( '.mail' ).attr( 'href', 'mailto:info@X-plose.be' );
+    $( '.mail' ).text( 'info@x-plose.be' );
+    $( '.phone' ).attr( 'href', 'tel:0032477349149' );
+    $( '.phone' ).text( '+32 477 34 91 49' );
+
+    $( 'body > header p, .h' ).appear();
 
     $( 'a[href*="#"]:not([href="#"])' ).click( function(){
         if( location.pathname.replace( /^\//, '' ) == this.pathname.replace( /^\//, '' ) && location.hostname == this.hostname ){
@@ -33,12 +38,18 @@ $( document ).ready( function(){
         }
     } );
 
+    $( 'footer' ).on( 'mousedown', function(){
+        $( 'footer a' ).fadeOut( 250 );
+    } ).on( 'mouseup', function(){
+        $( 'footer a' ).fadeIn( 250 );
+    } );
+
     $( 'input, textarea' ).on( 'blur', function(){
         $( this ).removeClass( 'error' );
     } );
 
     $( 'body > header p' ).on( 'appear', function(){
-        $( this ).css( 'animation','fadeIn 1250ms forwards' );
+        $( this ).css( 'animation', 'fadeIn 1250ms forwards' );
     } );
 
     $( '.h' ).on( 'appear', function(){
@@ -94,7 +105,8 @@ $( document ).ready( function(){
     } );
 
     loadMap();
-} );
+} )
+;
 
 function loadMap(){
     mapboxgl.accessToken = 'pk.eyJ1IjoicXJpdmkiLCJhIjoicXRVWmhDNCJ9.6uKJH1YNBkLbus8T_ZvRFA';

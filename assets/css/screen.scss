@@ -37,11 +37,11 @@ a, button{
   text-decoration : none;
 }
 h2, h3, p, form{
-  transition: margin-top 1s ease-out, opacity 1s;
+  transition : margin-top 1s ease-out, opacity 1s;
 }
 .h{
-  margin-top: 40px;
-  opacity: 0;
+  margin-top : 40px;
+  opacity    : 0;
 }
 .r{
   display    : block;
@@ -101,9 +101,9 @@ body{
       padding    : 150px 20px 0;
 
       img{
-        display   : block;
-        width     : 350px;
-        margin    : 0 auto;
+        display : block;
+        width   : 350px;
+        margin  : 0 auto;
       }
 
       h1{
@@ -143,34 +143,32 @@ body{
     border-top : solid 4px $color-accent;
     font       : inherit !important;
 
-    #contact{
-      position    : absolute;
-      z-index     : 5;
-      bottom      : 0;
-      left        : 50vw;
-      width       : 60vw;
-      margin-left : -30vw;
-      padding     : 40px 70px 60px;
-      background  : $color-text;
-      color       : $color-dark;
-
-      h2{
-        display     : block;
-        text-align  : center;
-        padding     : 50px 20px;
-        font-size   : 1.3em;
-        line-height : 1.3em;
-        color       : $color-back;
+    a{
+      width    : 161px;
+      text-align: center;
+      overflow : hidden;
+      position : absolute;
+      z-index  : 9;
+      top      : 120px;
+      &:hover{
+        background-color: rgba(66, 66, 66, .9) !important;
       }
-
+      &.mail{
+        right : 70vw;
+      }
+      &.phone{
+        left : 70vw;
+      }
     }
 
     .marker{
-      z-index    : 3;
-      display    : block;
-      width      : 10px;
-      height     : 10px;
-      background : $color-accent;
+      z-index         : 3;
+      display         : block;
+      width           : 40px;
+      height          : 40px;
+      margin          : -40px 0 0 -20px;
+      background      : transparent url(../img/marker.svg) no-repeat bottom center;
+      background-size : auto 100%;
     }
 
     .mapboxgl-ctrl-bottom-right{
@@ -185,7 +183,6 @@ body{
       }
     }
   }
-
   > main{
     position   : relative;
     background : $color-back;
