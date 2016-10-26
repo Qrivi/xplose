@@ -38,9 +38,9 @@ $( document ).ready( function(){
         }
     } );
 
-    $( 'footer' ).on( 'mousedown', function(){
+    $( 'footer' ).on( 'mousedown, touchstart', function(){
         $( 'footer a' ).fadeOut( 250 );
-    } ).on( 'mouseup', function(){
+    } ).on( 'mouseup, touchend', function(){
         $( 'footer a' ).fadeIn( 250 );
     } );
 
