@@ -20,7 +20,7 @@
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="false">
+    <TaskOptions isEnabled="true">
       <option name="arguments" value="--use autoprefixer --autoprefixer.browsers &quot;last 2 versions&quot; -o $FileName$ $FileName$" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Automatically add vendor prefixes to CSS files" />
