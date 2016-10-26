@@ -356,9 +356,11 @@ body{
   }
   body > footer a{
     &.mail{
+      right: auto;
       left : 5vw;
     }
     &.phone{
+      left: auto;
       right : 5vw;
     }
   }
