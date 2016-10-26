@@ -198,7 +198,9 @@ body{
 
         > p{
           width       : 45%;
+          min-width   : 325px;
           max-width   : 500px;
+          padding     : 0 10px 40px;
           font-size   : .9em;
           line-height : 1.5em;
         }
