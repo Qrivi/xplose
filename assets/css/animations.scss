@@ -1,23 +1,12 @@
 @keyframes header{
   0%{
-    background-position : center 25%;
+    background-position : center 15%;
   }
   50%{
-    background-position : center 75%;
+    background-position : center 85%;
   }
   100%{
-    background-position : center 25%;
-  }
-}
-@keyframes bounce{
-  0%{
-    margin-bottom : 5px;
-  }
-  50%{
-    margin-bottom : 0;
-  }
-  100%{
-    margin-bottom : 5px;
+    background-position : center 15%;
   }
 }
 @keyframes fadeInSimple{

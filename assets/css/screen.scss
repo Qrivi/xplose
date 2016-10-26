@@ -6,7 +6,7 @@
 // colors
 $color-back : #212121;
 $color-accent : #76ad1c;
-$color-title : #3e3d40;
+$color-dark : #3e3d40;
 $color-text : #ffffff;
 $font-title : "Varela Round", Helvetica, Arial, sans-serif;
 $font-normal : "Catamaran", Helvetica, Arial, sans-serif;
@@ -23,13 +23,30 @@ html{
 ::-webkit-scrollbar{
   width : 0 !important;
 }
-a{
+::selection{
+  background : $color-accent;
+  color      : $color-text;
+}
+::-moz-selection{
+  background : $color-accent;
+  color      : $color-text;
+}
+a, button{
   color           : inherit;
   cursor          : pointer;
   text-decoration : none;
 }
+h2, h3, p, form{
+  transition: margin-top 1s ease-out, opacity 1s;
+}
 .h{
-  display : none !important;
+  margin-top: 40px;
+  opacity: 0;
+}
+.r{
+  display    : block;
+  padding    : 10px 0 0;
+  text-align : right;
 }
 .btn{
   display        : inline-block;
@@ -71,7 +88,8 @@ body{
     background    : transparent url(../img/bg.jpg) no-repeat center center;
     border-bottom : solid 4px $color-accent;
     height        : 680px;
-    animation     : header 100s infinite;
+    animation     : header 85s infinite;
+    // animation-timing-function: linear;
 
     > section{
       position   : relative;
@@ -86,14 +104,15 @@ body{
         display   : block;
         width     : 350px;
         margin    : 0 auto;
-        animation : fadeInSimple 3s 500ms forwards;
-        opacity   : 0;
+      }
+
+      h1{
+        display : none;
       }
 
       p{
         width      : 100%;
         text-align : center;
-        animation  : fadeIn 1250ms 750ms forwards;
         opacity    : 0;
 
         &.baseline{
@@ -118,20 +137,51 @@ body{
 
   > footer{
     position   : relative;
+    z-index    : 1;
     width      : 100vw;
-    height     : 600px;
+    height     : 300px;
     border-top : solid 4px $color-accent;
+    font       : inherit !important;
 
-    #map{
-      display : block;
-      width   : 100%;
-      height  : 100%;
+    #contact{
+      position    : absolute;
+      z-index     : 5;
+      bottom      : 0;
+      left        : 50vw;
+      width       : 60vw;
+      margin-left : -30vw;
+      padding     : 40px 70px 60px;
+      background  : $color-text;
+      color       : $color-dark;
 
-      .marker{
-        display    : block;
-        width      : 10px;
-        height     : 10px;
-        background : $color-accent;
+      h2{
+        display     : block;
+        text-align  : center;
+        padding     : 50px 20px;
+        font-size   : 1.3em;
+        line-height : 1.3em;
+        color       : $color-back;
+      }
+
+    }
+
+    .marker{
+      z-index    : 3;
+      display    : block;
+      width      : 10px;
+      height     : 10px;
+      background : $color-accent;
+    }
+
+    .mapboxgl-ctrl-bottom-right{
+      font-family : Arial, sans-serif;
+      font-size   : 12px;
+      opacity     : .7;
+      right       : -252px;
+      transition  : right 500ms ease-in-out;
+
+      &:hover{
+        right : 0;
       }
     }
   }
@@ -147,6 +197,30 @@ body{
       padding     : 50px 20px;
       font-size   : 1.3em;
       line-height : 1.3em;
+
+      &.g{
+        color : $color-accent;
+      }
+    }
+
+    h3{
+      display        : block;
+      color          : $color-accent;
+      text-align     : center;
+      text-transform : lowercase;
+      font-family    : $font-title;
+      font-size      : 1.5em;
+      padding        : 10px 0;
+
+      &:after{
+        content    : " ";
+        speak      : none;
+        display    : block;
+        margin     : 15px auto;
+        width      : 50px;
+        height     : 1px;
+        background : $color-text;
+      }
     }
 
     section{
@@ -163,6 +237,58 @@ body{
       //  height     : 1px;
       //  background : $color-accent;
       //}
+
+      form{
+        display   : block;
+        width     : 90vw;
+        max-width : 700px;
+        margin    : 0 auto 80px;
+
+        p{
+          padding : 7px 0;
+
+          span{
+            display : inline-block;
+            padding : 12px 0 0;
+            &.error{
+              color : orangered;
+            }
+          }
+          button{
+            float : right;
+          }
+        }
+
+        input, textarea{
+          font-family : $font-normal;
+          font-size   : .9em;
+          margin      : 5px 0 10px;
+          padding     : 5px 15px;
+          border      : solid 2px $color-dark;
+          display     : block;
+          width       : 100%;
+          transition  : border-color 500ms;
+          background  : $color-back;
+          color       : $color-text;
+          resize      : vertical;
+
+          &[name=name]{
+            float : left;
+            width : 48%;
+          }
+          &[name=email]{
+            float : right;
+            width : 48%;
+          }
+
+          &.error{
+            border-color : orangered;
+          }
+          &:focus{
+            border-color : $color-accent;
+          }
+        }
+      }
 
       div{
         display         : flex;
@@ -210,32 +336,6 @@ body{
           padding     : 0 10px 40px;
           font-size   : .9em;
           line-height : 1.5em;
-
-          h3{
-            display        : block;
-            color          : $color-accent;
-            text-align     : center;
-            text-transform : lowercase;
-            font-family    : $font-title;
-            font-size      : 1.5em;
-            padding        : 10px 0;
-
-            &:after{
-              content    : " ";
-              speak      : none;
-              display    : block;
-              margin     : 15px auto;
-              width      : 50px;
-              height     : 1px;
-              background : $color-text;
-            }
-          }
-
-          .moreinfo{
-            display    : block;
-            padding    : 10px 0 0;
-            text-align : right;
-          }
         }
       }
 
@@ -261,12 +361,12 @@ body{
 .pace .pace-progress:after{
   display     : block;
   position    : absolute;
-  top         : 0;
+  top         : .5rem;
   right       : .5rem;
   content     : attr(data-progress-text);
   font-family : $font-title;
   font-size   : 4rem;
   line-height : 1;
   text-align  : right;
-  color       : $color-back;
+  color       : $color-accent;
 }
