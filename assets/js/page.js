@@ -44,6 +44,15 @@ $( document ).ready( function(){
         $( 'footer a' ).fadeIn( 250 );
     } );
 
+    $( 'input, textarea' ).on( 'focus', function(){
+        if( $( '#contact' ).hasClass( 'sent' ) ){
+            $( '#contact' ).removeClass( 'sent' );
+            $( '#contact button' ).removeAttr( 'disabled' );
+            $( '#contact span' ).text( ' ' );
+            $( '#contact input, #contact textarea' ).val( '' );
+        }
+    } );
+
     $( 'input, textarea' ).on( 'blur', function(){
         $( this ).removeClass( 'error' );
     } );
@@ -62,7 +71,7 @@ $( document ).ready( function(){
         var errors = false;
 
         $( '*' ).removeClass( 'error' );
-        $( 'span', this ).text( ' ' );
+        $( 'span', this ).text( '' );
 
         if( $( '[name=email]', this ).val().indexOf( '@' ) < 0 ){
             $( '[name=email]', this ).addClass( 'error' );
@@ -93,7 +102,8 @@ $( document ).ready( function(){
                 $( '#contact span' ).text( ' ' );
             } )
                 .done( function(){
-                    $( '#contact *:not(span)' ).slideUp();
+                    $( '#contact' ).addClass( 'sent' );
+                    $( '#contact button' ).attr( 'disabled', 'disabled' );
                     $( '#contact span' ).text( 'Je bericht werd verzonden! We antwoorden zo spoedig mogelijk!' );
                 } )
                 .fail( function(){
@@ -113,6 +123,7 @@ function loadMap(){
 
     var el = document.createElement( 'div' );
     el.className = 'marker';
+    el.innerHTML = '<p>18-Oktoberstraat 39<br>8200 Brugge</p>';
 
     var map = new mapboxgl.Map( {
         container : 'map',

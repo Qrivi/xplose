@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "https://fonts.googleapis.com/css?family=Catamaran:100,300,400,800|Varela+Round";
+@import "https://fonts.googleapis.com/css?family=Catamaran:400,800|Varela+Round";
 @import "reset.css";
 @import "animations.css";
 
@@ -37,7 +37,7 @@ a, button{
   text-decoration : none;
 }
 h2, h3, p, form{
-  transition : margin-top 1s ease-out, opacity 1s;
+  transition : margin-top 750ms ease-out, opacity 750ms;
 }
 .h{
   margin-top : 40px;
@@ -144,7 +144,27 @@ body{
     border-top : solid 4px $color-accent;
     font       : inherit !important;
 
-    a{
+    p{
+      background    : $color-accent;
+      font-size     : .7em;
+      font-weight   : 800;
+      padding       : 10px 20px;
+      border-radius : 22px;
+
+      &.btw{
+        position                   : absolute;
+        z-index                    : 5;
+        bottom                     : -7px;
+        left                       : 50vw;
+        width                      : 180px;
+        margin                     : 0 0 0 -90px;
+        text-align                 : center;
+        border-bottom-left-radius  : 0;
+        border-bottom-right-radius : 0;
+      }
+    }
+
+    > a{
       width      : 161px;
       text-align : center;
       overflow   : hidden;
@@ -170,6 +190,21 @@ body{
       margin          : -40px 0 0 -20px;
       background      : transparent url(../img/marker.svg) no-repeat bottom center;
       background-size : auto 100%;
+
+      &:hover p{
+        top       : -32px;
+        opacity   : 1;
+        transform : scale(1);
+      }
+
+      p{
+        transform  : scale(0);
+        transition : transform 250ms, top 250ms;
+        position   : absolute;
+        top        : -10px;
+        left       : -60px;
+        width      : 160px;
+      }
     }
 
     .mapboxgl-ctrl-bottom-right{
@@ -184,6 +219,7 @@ body{
       }
     }
   }
+
   > main{
     position   : relative;
     background : $color-back;
@@ -257,6 +293,23 @@ body{
           }
         }
 
+        &.sent{
+          input, textarea{
+            opacity : .1;
+            cursor  : default !important;
+          }
+          button{
+            opacity : 0;
+          }
+          span{
+            color : $color-accent !important;
+          }
+        }
+
+        button{
+          transition : opacity 500ms;
+        }
+
         input, textarea{
           font-family : $font-normal;
           font-size   : .9em;
@@ -265,7 +318,7 @@ body{
           border      : solid 2px $color-dark;
           display     : block;
           width       : 100%;
-          transition  : border-color 500ms;
+          transition  : border-color 500ms, opacity 500ms;
           background  : $color-back;
           color       : $color-text;
           resize      : vertical;
@@ -355,11 +408,11 @@ body{
   }
   body > footer a{
     &.mail{
-      right: auto;
-      left : 5vw;
+      right : auto;
+      left  : 5vw;
     }
     &.phone{
-      left: auto;
+      left  : auto;
       right : 5vw;
     }
   }
