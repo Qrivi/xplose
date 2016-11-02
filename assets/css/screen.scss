@@ -170,7 +170,7 @@ body{
       overflow   : hidden;
       position   : absolute;
       z-index    : 9;
-      top        : 120px;
+      bottom     : 115px;
       &:hover{
         background-color : rgba(66, 66, 66, .9) !important;
       }
@@ -192,16 +192,16 @@ body{
       background-size : auto 100%;
 
       &:hover p{
-        top       : -32px;
+        bottom    : 18px;
         opacity   : 1;
         transform : scale(1);
       }
 
       p{
         transform  : scale(0);
-        transition : transform 250ms, top 250ms;
+        transition : transform 250ms, bottom 250ms;
         position   : absolute;
-        top        : -10px;
+        bottom     : -10px;
         left       : -60px;
         width      : 160px;
       }

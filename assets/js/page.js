@@ -119,7 +119,7 @@ $( document ).ready( function(){
 ;
 
 function loadMap(){
-    mapboxgl.accessToken = 'pk.eyJ1IjoicXJpdmkiLCJhIjoicXRVWmhDNCJ9.6uKJH1YNBkLbus8T_ZvRFA';
+    mapboxgl.accessToken = 'pk.eyJ1IjoicXJpdmkiLCJhIjoiY2l2MWphb3RoMDAwMjJ0bnpremV4YXozMSJ9.RIlfGIqXPsijNmYe6VpgIQ';
 
     var el = document.createElement( 'div' );
     el.className = 'marker';
