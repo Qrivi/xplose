@@ -123,7 +123,6 @@ function loadMap(){
 
     var el = document.createElement( 'div' );
     el.className = 'marker';
-    el.innerHTML = '<p>18-Oktoberstraat 39<br>8200 Brugge</p>';
 
     var map = new mapboxgl.Map( {
         container : 'map',

@@ -89,7 +89,7 @@ body{
     border-bottom : solid 4px $color-accent;
     height        : 680px;
     animation     : header 85s infinite;
-    // animation-timing-function: linear;
+                  // animation-timing-function: linear;
 
     > section{
       position   : relative;
@@ -140,27 +140,28 @@ body{
     position   : relative;
     z-index    : 1;
     width      : 100vw;
-    height     : 300px;
+    height     : 320px;
     border-top : solid 4px $color-accent;
     font       : inherit !important;
 
-    p{
-      background    : $color-accent;
-      font-size     : .7em;
-      font-weight   : 800;
-      padding       : 10px 20px;
-      border-radius : 22px;
+    div.address{
+      display          : flex;
+      flex-wrap        : wrap;
+      justify-content  : space-between;
+      align-items      : center;
+      font-size        : .8em;
+      line-height      : 1.5em;
+      position         : absolute;
+      z-index          : 10;
+      bottom           : 0;
+      left             : 0;
+      width            : 100vw;
+      margin           : 0 auto;
+      padding          : 10px 10vw;
+      background-color : rgba(33, 33, 33, .7);
 
-      &.btw{
-        position                   : absolute;
-        z-index                    : 5;
-        bottom                     : -7px;
-        left                       : 50vw;
-        width                      : 180px;
-        margin                     : 0 0 0 -90px;
-        text-align                 : center;
-        border-bottom-left-radius  : 0;
-        border-bottom-right-radius : 0;
+      p{
+        padding: 0 10px;
       }
     }
 
@@ -170,7 +171,7 @@ body{
       overflow   : hidden;
       position   : absolute;
       z-index    : 9;
-      bottom     : 115px;
+      bottom     : 145px;
       &:hover{
         background-color : rgba(66, 66, 66, .9) !important;
       }
@@ -190,21 +191,6 @@ body{
       margin          : -40px 0 0 -20px;
       background      : transparent url(../img/marker.svg) no-repeat bottom center;
       background-size : auto 100%;
-
-      &:hover p{
-        bottom    : 18px;
-        opacity   : 1;
-        transform : scale(1);
-      }
-
-      p{
-        transform  : scale(0);
-        transition : transform 250ms, bottom 250ms;
-        position   : absolute;
-        bottom     : -10px;
-        left       : -60px;
-        width      : 160px;
-      }
     }
 
     .mapboxgl-ctrl-bottom-right{
@@ -261,16 +247,16 @@ body{
       width   : 100vw;
       padding : 30px 0;
 
-      //&:after{
-      //  content    : " ";
-      //  speak      : none;
-      //  display    : block;
-      //  margin     : 90px auto 0;
-      //  max-width  : 696px;
-      //  width      : 69vw;
-      //  height     : 1px;
-      //  background : $color-accent;
-      //}
+              //&:after{
+              //  content    : " ";
+              //  speak      : none;
+              //  display    : block;
+              //  margin     : 90px auto 0;
+              //  max-width  : 696px;
+              //  width      : 69vw;
+              //  height     : 1px;
+              //  background : $color-accent;
+              //}
 
       form{
         display   : block;
