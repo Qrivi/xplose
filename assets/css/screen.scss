@@ -199,6 +199,7 @@ body{
       opacity     : .7;
       right       : -252px;
       transition  : right 500ms ease-in-out;
+      z-index: 11;
 
       &:hover{
         right : 0;
